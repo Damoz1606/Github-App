@@ -1,0 +1,88 @@
+.github {
+    width: 100%;
+    max-width: 600px;
+    min-height: 500px;
+
+    border-radius: 16px;
+
+    background-color: white;
+
+    /* border: 2px solid #000; */
+}
+
+.github input[type=text].search_bar {
+    all: unset;
+    text-align: center;
+    width: 100%;
+    word-break: break-all;
+}
+
+.github .profile,
+.github .stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    height: 300px;
+}
+
+
+.github .stats {
+    background-color: var(--background-hex);
+    border-top-right-radius: 64px;
+    color: #fff;
+    position: relative;
+}
+
+.github .stats .stats_content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.stats .stat {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stats .stat span {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.stats .stat p {
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+.github .stats .footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.github .stats .footer p {
+    font-size: 0.75rem;
+    font-weight: 100;
+}
+
+.github .stats .footer a {
+    all: unset;
+    cursor: pointer;
+    color: #4141df;
+    font-weight: 500;
+
+    transition: all .1s ease-in;
+}
+
+.github .stats .footer a:hover {
+    color: #41c2df;
+    font-weight: 700;
+}
