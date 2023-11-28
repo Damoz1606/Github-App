@@ -10,8 +10,10 @@ type ProfileProps = {
 
 const Profile: React.FC<ProfileProps> = ({ load, source, username }) => {
     return (
-        <div className={style.container}>
-            <Image src={source} width={150} height={150} alt={''} />
+        <div className={`${style.container} ${load ? style.load : ""}`}>
+            <div className={`${style.image_container}`}>
+                <Image src={source} alt={''} layout='fill' />
+            </div>
             <div className={`${style.username}`}>{username}</div>
         </div>
     )

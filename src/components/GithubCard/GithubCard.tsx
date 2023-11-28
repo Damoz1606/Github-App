@@ -9,6 +9,7 @@ const GithubCard: React.FC = () => {
   const [profile, setProfile] = useState<{ username: string, image: string }>({ image: "", username: "" })
   const [nickname, setNickname] = useState<string>("");
   const [repo, setRepo] = useState<{ followers: number, repositories: number, followed: number }>({ followed: 0, followers: 0, repositories: 0 });
+  const [load, setLoad] = useState<boolean>(false);
 
   useEffect(() => {
     lookForUser("Damoz1606");
@@ -23,6 +24,7 @@ const GithubCard: React.FC = () => {
   }
 
   const lookForUser = async (name: string) => {
+    setLoad(true);
     try {
       const user = await getUser(name);
       console.log(user);
@@ -39,6 +41,8 @@ const GithubCard: React.FC = () => {
       }
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoad(false);
     }
   }
 
@@ -53,9 +57,9 @@ const GithubCard: React.FC = () => {
             type="text"
             placeholder='Type Username + Enter' />
         </form>
-        <Profile load={false} source={profile.image} username={profile.username} />
+        <Profile load={true} source={profile.image} username={profile.username} />
       </div>
-      <div className={`${style.stats}`}>
+      <div className={`${style.github_status}`}>
         <div className={`${style.stats_content}`}>
           <div className={`${style.stat}`}>
             <span>{repo.followers}</span>

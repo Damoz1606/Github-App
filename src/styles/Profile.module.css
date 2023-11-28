@@ -8,10 +8,30 @@
     margin-top: 1rem;
 }
 
-.container img {
+.container .image_container {
+    width: 150px;
+    height: 150px;
     border-radius: 100%;
     border: 2px solid rgba(128, 128, 128, 0.2);
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+    padding: 0.5rem;
+
+    transition: border .3s ease-in;
 }
+
+.container .image_container>img {
+    position: relative !important;
+    border-radius: inherit;
+}
+
+.container.load .image_container {
+    border: 5px solid rgba(58, 131, 241, 0.879);
+    transition: border .3s ease-out;
+}
+
 
 .container .username {
     font-size: 1.25rem;
